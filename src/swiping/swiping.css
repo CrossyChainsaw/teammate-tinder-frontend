@@ -1,0 +1,22 @@
+.big-button {
+    font-size: 50px; /* Adjust the font size as needed */
+    padding: 12px 24px; /* Adjust the padding to increase button size */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    background-color: #007bff; /* Optional: Change background color */
+    color: #ffffff; /* Optional: Change text color */
+    border: none; /* Optional: Remove border */
+    cursor: pointer; /* Optional: Change cursor to pointer */
+  }
+  
+.disabled {
+    opacity: 0.5; /* Reduce opacity to indicate disabled state */
+    cursor: not-allowed; /* Change cursor to indicate non-interactable */
+    pointer-events: none; /* Disable pointer events to prevent interaction */
+  }
+  
+
+  /* Optional: Hover effect */
+.big-button:hover {
+    background-color: #0056b3; /* Darker background color */
+  }
+  
