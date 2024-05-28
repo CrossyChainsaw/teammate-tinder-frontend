@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './swiping.css'
+import config from '../config/config';
 
 interface UserData {
     id: number;
@@ -20,7 +21,7 @@ function Swiping() {
         try {
             setLoading(true);
             console.log(REQUESTING_USER_ID)
-            const response = await fetch('http://localhost:5240/Profile/read/' + REQUESTING_USER_ID); 
+            const response = await fetch(`${config.profileServiceUrl}read/${REQUESTING_USER_ID}`); 
             if (!response.ok) {
                 throw new Error(`Failed to fetch data: ${response.statusText}`);
             }
@@ -37,7 +38,7 @@ function Swiping() {
     const clickNo = async (id2: number) => {
         console.log('no') 
         console.log(MY_USER_ID)
-        const response = await fetch(`http://localhost:5180/Swiping/no2?swiperID=${MY_USER_ID}&id2=${id2}`, {
+        const response = await fetch(`${config.matchServiceUrl}no2?swiperID=${MY_USER_ID}&id2=${id2}`, {
             method: 'POST', // Specify the HTTP method as 'POST'
             headers: {
               'Content-Type': 'application/json' // Assuming you're sending JSON data
